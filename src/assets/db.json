@@ -1,17 +1,17 @@
 {
   "lists": [
-    { "id": 1, "name": "Продажи", "colorId": 5 },
-    { "id": 2, "name": "Фронтенд", "colorId": 4 },
-    { "id": 3, "name": "Фильмы и сериалы", "colorId": 3 },
-    { "id": 4, "name": "Книги", "colorId": 2 },
-    { "id": 5, "name": "Личное", "colorId": 1 }
+    { "id": 1, "name": "Sales", "colorId": 5 },
+    { "id": 2, "name": "Frontend", "colorId": 4 },
+    { "id": 3, "name": "Films", "colorId": 3 },
+    { "id": 4, "name": "Books", "colorId": 2 },
+    { "id": 5, "name": "Personal", "colorId": 1 }
   ],
   "tasks": [
-    { "id": 1, "listId": 2, "text": "Изучить JavaScript", "completed": true },
+    { "id": 1, "listId": 2, "text": "Learn JavaScript", "completed": true },
     {
       "id": 2,
       "listId": 2,
-      "text": "Изучить паттерны проектирования",
+      "text": "Learn JavaScript patterns",
       "completed": false
     },
     {

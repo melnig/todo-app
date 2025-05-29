@@ -44,17 +44,16 @@ body {
 }
 
 .sidebar,
-.main-content {
+.content {
   border-radius: 20px;
   backdrop-filter: blur(16px);
   background: rgba(255, 255, 255, 0.3);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  padding: 1.5rem;
+  padding: 50px 20px 50px 20px;
 }
 
 .sidebar {
   flex: 0 0 300px;
-  padding: 50px 20px 50px 20px;
 }
 
 @media (max-width: 648px) {
@@ -63,7 +62,7 @@ body {
     max-width: 100%;
   }
 
-  .main-content {
+  .content {
     flex: 1 1 100%;
     max-width: 100%;
   }
@@ -73,8 +72,9 @@ body {
   }
 }
 
-.main-content {
+.content {
   flex: 3;
+  padding: 50px;
 }
 
 .field {
@@ -100,9 +100,9 @@ button {
   outline: none;
   cursor: pointer;
   &:hover {
-    background: darken($color: #4dd599, $amount: 5%);
+    background: #38d08d;
   }
   &:active {
-    background: darken($color: #4dd599, $amount: 10%);
+    background: #38d084;
   }
 }

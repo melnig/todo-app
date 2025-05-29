@@ -4,11 +4,31 @@ import "./addButtonList.scss";
 import Badge from "../Badge/Badge";
 import List from "../List/List";
 
-const AddButtonList = ({ colors }) => {
+const AddButtonList = ({ colors, onAdd }) => {
   const [isPopup, setIsPopup] = useState(false);
   const [selectedBadge, setSelectedBadge] = useState(colors[0].id);
+  const [inputValue, setInputValue] = useState("");
 
-  console.log(selectedBadge);
+  const clearPopup = () => {
+    setInputValue("");
+    setSelectedBadge(colors[0].id);
+    setIsPopup(!isPopup);
+  };
+
+  const addList = () => {
+    if (!inputValue) {
+      alert("Enter value");
+      return;
+    }
+    const color = colors.filter((c) => c.id === selectedBadge)[0].name;
+    onAdd({
+      id: Math.random(),
+      name: inputValue,
+      color,
+    });
+
+    clearPopup();
+  };
 
   return (
     <div className="add-list">
@@ -40,6 +60,10 @@ const AddButtonList = ({ colors }) => {
             className="field"
             type="text"
             placeholder="Enter new category"
+            value={inputValue}
+            onChange={(e) => {
+              setInputValue(e.target.value);
+            }}
           />
           <div className="add-list__colors">
             {colors.map((color, index) => (
@@ -53,14 +77,14 @@ const AddButtonList = ({ colors }) => {
               />
             ))}
           </div>
-          <button className="add-list__button">Add</button>
-          <span
-            className="close-list"
-            onClick={() => {
-              setIsPopup(!isPopup);
-            }}
-          >
+
+          <button onClick={addList} className="add-list__button">
+            Add
+          </button>
+
+          <span className="close-list">
             <svg
+              onClick={clearPopup}
               xmlns="http://www.w3.org/2000/svg"
               width="32"
               height="32"

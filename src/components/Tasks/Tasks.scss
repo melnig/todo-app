@@ -1,0 +1,79 @@
+.tasks {
+  &-title {
+    font-size: 32px;
+    padding-bottom: 2px;
+    border-bottom: 2px solid #f2f2f2;
+    &:hover {
+      img {
+        opacity: 0.4;
+      }
+    }
+    img {
+      opacity: 0;
+      margin-left: 16px;
+      width: 26px;
+      height: 26px;
+      cursor: pointer;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+  &-items {
+    margin-top: 30px;
+    .checkbox {
+      &:hover {
+        label {
+          background-color: #f2f2f2;
+          svg {
+            opacity: 1;
+
+            path {
+              fill: #b2b2b2;
+            }
+          }
+        }
+      }
+      label {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        border: 3px solid #ededed;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        transition: background-color 0.2s ease-in-out;
+        svg {
+          opacity: 0;
+        }
+      }
+      input {
+        display: none;
+      }
+      input:checked + label {
+        background-color: #4dd599;
+        border: none;
+        svg {
+          opacity: 1;
+          path {
+            fill: #fff;
+          }
+        }
+      }
+    }
+    &__row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      .inputText {
+        background: none;
+        border: none;
+        outline: none;
+        color: #000;
+        font-size: 16px;
+        width: 100%;
+      }
+    }
+  }
+}
