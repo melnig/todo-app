@@ -9,8 +9,10 @@
       margin-bottom: 4px;
       cursor: pointer;
       border-radius: 8px;
+      transition: background-color 0.1s ease-in-out;
       &:hover {
         background-color: rgba(255, 255, 255, 0.8);
+        transition: background-color 0.1s ease-in-out;
       }
       &:hover .deleteIcon {
         display: block;
@@ -30,8 +32,10 @@
         width: 20px;
         height: 20px;
         opacity: 0.3;
+        transition: opacity 0.1s ease-in-out;
         &:hover {
           opacity: 1;
+          transition: opacity 0.1s ease-in-out;
         }
       }
     }
