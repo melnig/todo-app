@@ -21,6 +21,15 @@
   }
   &-items {
     margin-top: 30px;
+    h2 {
+      text-align: center;
+      font-size: 22px;
+      color: #c9d1d3;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%);
+    }
     .checkbox {
       &:hover {
         label {
@@ -76,5 +85,57 @@
         width: 100%;
       }
     }
+  }
+  &-form {
+    margin-top: 20px;
+    &__new {
+      display: flex;
+      align-items: center;
+      margin-bottom: 16px;
+      cursor: pointer;
+      gap: 19px;
+      opacity: 0.5;
+      transition: opacity 0.15s ease-in-out;
+      &:hover {
+        opacity: 0.9;
+      }
+      img {
+        width: 16px;
+        height: 16px;
+        margin-left: 2px;
+        svg {
+        }
+      }
+    }
+    &__block {
+      input {
+        margin-bottom: 8px;
+      }
+      .button-grey {
+        background-color: #f4f6f8;
+        color: #9c9c9c;
+        margin-left: 8px;
+        &:hover {
+          background-color: darken(#f4f6f8, $amount: 2);
+        }
+      }
+    }
+  }
+}
+.title-edit {
+  display: flex;
+  position: absolute;
+  top: 16px;
+  input {
+    background-color: #fff;
+    width: 200px;
+    padding: 8px;
+    outline: none;
+    border: none;
+    top: 16px;
+    left: 16px;
+    color: #030303;
+    margin-right: 10px;
+    border-radius: 8px;
   }
 }

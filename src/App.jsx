@@ -7,6 +7,7 @@ import axios from "axios";
 function App() {
   const [lists, setLists] = useState(null);
   const [colors, setColors] = useState(null);
+  const [activeItem, setActiveItem] = useState(null);
 
   useEffect(() => {
     axios
@@ -21,6 +22,26 @@ function App() {
 
   const onAddList = (obj) => {
     const newList = [...lists, obj];
+    setLists(newList);
+  };
+
+  const onAddTask = (listId, taskObj) => {
+    const newTasks = lists.map((item) => {
+      if (item.id === listId) {
+        item.tasks = [...item.tasks, taskObj];
+      }
+      return item;
+    });
+    setLists(newTasks);
+  };
+
+  const onEditListTitle = (id, title) => {
+    const newList = lists.map((item) => {
+      if (item.id === id) {
+        item.name = title;
+      }
+      return item;
+    });
     setLists(newList);
   };
 
@@ -44,7 +65,7 @@ function App() {
                   </svg>
                 ),
                 name: "All tasks",
-                active: false,
+                active: true,
               },
             ]}
           />
@@ -56,13 +77,25 @@ function App() {
                 setLists(newLists);
               }}
               isRemovable
+              onClickItem={(item) => {
+                setActiveItem(item);
+              }}
+              activeItem={activeItem}
             />
           ) : (
             "Загрузка..."
           )}
           <AddButtonList onAdd={onAddList} colors={colors} />
         </div>
-        <div className="content">{lists && <Tasks list={lists[1]} />}</div>
+        <div className="content">
+          {lists && activeItem && (
+            <Tasks
+              list={activeItem && activeItem}
+              onEditTitle={onEditListTitle}
+              onAddTask={onAddTask}
+            />
+          )}
+        </div>
       </div>
     </>
   );
