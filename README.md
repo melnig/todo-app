@@ -19,7 +19,7 @@ Task Flow App is a simple task management application built with **React** for t
 
 1. Clone the repository.
    ```
-   git clone [<repository-url>](https://github.com/melnig/todo-app.git)
+   git clone https://github.com/melnig/todo-app.git
    ```
 2. Install dependencies:
    ```
