@@ -26,7 +26,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  min-height: 576px;
 }
 
 .todo-title {
@@ -37,10 +36,12 @@ body {
   padding: 1.5rem;
   margin-bottom: 1rem;
   text-align: center;
+  cursor: pointer;
 }
 
 .todo {
   flex-direction: row;
+  height: calc(100vh - 200px);
 }
 
 .sidebar,
@@ -54,9 +55,14 @@ body {
 
 .sidebar {
   flex: 0 0 300px;
+  height: 100%;
+  overflow-y: auto;
 }
 
 @media (max-width: 648px) {
+  .todo {
+    height: auto;
+  }
   .sidebar {
     flex: 1 1 100%;
     max-width: 100%;
@@ -75,6 +81,7 @@ body {
 .content {
   flex: 3;
   padding: 50px;
+  overflow: auto;
 }
 
 .field {
@@ -104,5 +111,26 @@ button {
   }
   &:active {
     background: #38d084;
+  }
+}
+
+.scroll-wrapper {
+  height: 100%;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #999 #f1f1f1;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #555;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
   }
 }

@@ -38,7 +38,14 @@ const AddButtonList = ({ colors, onAdd }) => {
       })
       .then(({ data }) => {
         const color = colors.filter((c) => c.id === selectedBadge)[0].name;
-        const listObj = { ...data, color: { name: color } };
+        const listObj = {
+          ...data,
+          color: {
+            name: color,
+            hex: colors.find((c) => c.id === selectedBadge).hex,
+          },
+          tasks: [],
+        };
         onAdd(listObj);
         clearPopup();
       })

@@ -1,4 +1,5 @@
 .tasks {
+  position: relative;
   &-title {
     font-size: 32px;
     padding-bottom: 2px;
@@ -125,7 +126,12 @@
 .title-edit {
   display: flex;
   position: absolute;
-  top: 16px;
+  padding: 16px;
+  background-color: #f4f6f8;
+  top: -32px;
+  right: 80px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   input {
     background-color: #fff;
     width: 200px;
@@ -138,4 +144,26 @@
     margin-right: 10px;
     border-radius: 8px;
   }
+}
+
+.task-btns {
+  display: inline-flex;
+  gap: 8px;
+  button {
+    background-color: #f4f6f8;
+    color: #9c9c9c;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s ease-in-out;
+    &:hover {
+      background-color: darken(#f4f6f8, $amount: 2);
+    }
+  }
+}
+
+.tasks-link {
+  text-decoration: none;
 }

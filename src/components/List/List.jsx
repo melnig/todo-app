@@ -32,7 +32,13 @@ const List = ({
               ? item.active
               : activeItem && activeItem.id === item.id,
           })}
-          onClick={onClickItem ? () => onClickItem(item) : null}
+          onClick={() => {
+            if (item.onClick) {
+              item.onClick(item);
+            } else if (onClickItem) {
+              onClickItem(item);
+            }
+          }}
         >
           <i>{item.icon ? item.icon : <Badge color={item.color.name} />}</i>
           <span>
